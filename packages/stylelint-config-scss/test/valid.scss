@@ -1,0 +1,13 @@
+.mock {
+	@apply inline-block;
+
+	.mock__element {
+		display: block;
+	}
+
+	.mock--modifier {
+		.mock__element {
+			display: flex;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+.mock {
+	@apply inline-block;
+	@my-rule();
+
+	.mock__element {
+		// Invalid use of space indentation
+	    display: block;
+	}
+	.mock--modifier {
+		// Invalid use of empty lines
+		.mock__element {
+			display: flex;
+		}
+	}
+}
