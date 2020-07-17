@@ -1,6 +1,6 @@
 {
   "name": "@mobly/eslint-config-react-ts",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Eslint config for React and TypeScript projects",
   "main": "index.js",
   "files": [
