@@ -6,6 +6,9 @@
   "files": [
     "index.js"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "jest ./test/*.test.js --verbose"
   },
