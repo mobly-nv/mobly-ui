@@ -1,0 +1,67 @@
+/**
+ * Modal
+ * ----
+ */
+
+$modal-overlay-gradient: linear-gradient(135deg, rgba(#018fac, 0.48), rgba(#018fac, 0.88));
+
+/**
+ * Elements
+ */
+
+.c-modal__overlay {
+	@apply fixed inset-0 z-4 opacity-0;
+
+	background-image: $modal-overlay-gradient;
+}
+
+.c-modal__box {
+	@apply
+		fixed
+		z-5
+		rounded
+		shadow-sm
+		opacity-0
+		transform
+		-translate-x-1/2
+		-translate-y-1/2;
+
+	top: 50%;
+	left: 50%;
+
+	@screen md {
+		@apply max-w-widget px-16 py-8;
+	}
+}
+
+.c-modal__close {
+	@apply absolute;
+
+	top: theme('spacing.2');
+	right: theme('spacing.2');
+}
+
+/**
+ * States
+ */
+
+.c-modal--open {
+	@apply block;
+
+	.c-modal__overlay {
+		animation:
+			fade-in
+			theme('transitionDuration.200')
+			theme('transitionTimingFunction.in')
+			both;
+	}
+
+	.c-modal__box {
+		animation:
+			fade-in
+			theme('transitionDuration.200')
+			theme('transitionDuration.200')
+			theme('transitionTimingFunction.in')
+			both;
+	}
+}

@@ -1,0 +1,11 @@
+// Font mixins
+// ----
+// ------------------------------------------------------------------------ /
+
+// Import Futura PT font from typekit
+@import url("https://use.typekit.net/jdw6bno.css");
+
+$moblycons-cdn-url: "https://d1azc1qln24ryf.cloudfront.net/161353";
+
+@include font-face("MoblyconsFill", "#{$moblycons-cdn-url}/moblycons-fill/MoblyconsFill", '?ikmivc');
+@include font-face("MoblyconsLine", "#{$moblycons-cdn-url}/moblycons-line/MoblyconsLine", '?yp0rbf');

@@ -1,0 +1,76 @@
+import { action } from '@storybook/addon-actions';
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+
+import { createElement } from '../helpers';
+
+<Meta title="Input" />
+
+# Input
+
+<Preview>
+	<Story name="Default">
+		{() => `
+			<div class="c-input">
+				<label class="c-input__label">Label</label>
+				<div class="c-input__field-container">
+					<input class="c-input__field"></div>
+				</div>
+			</div>
+		`}
+	</Story>
+</Preview>
+
+<Preview>
+	<Story name="Required">
+		{() => `
+			<div class="c-input c-input--active c-input--required">
+				<label class="c-input__label">Label</label>
+				<div class="c-input__field-container">
+					<input class="c-input__field" />
+				</div>
+			</div>
+		`}
+	</Story>
+</Preview>
+
+<Preview>
+	<Story name="Addon">
+		{() => `
+			<div class="c-input c-input--addon-left c-input--brand-eu">
+				<label class="c-input__label">Label</label>
+				<div class="c-input__field-container">
+					<div class="c-input__addon">
+						<img src="/assets/img/eu.png" alt="belgië eu logo" />
+					</div>
+					<input class="c-input__field" />
+				</div>
+			</div>
+		`}
+	</Story>
+</Preview>
+
+<Preview>
+	<Story name="No floating label">
+		{() => `
+			<div class="c-input c-input--no-float">
+				<label class="c-input__label">Label</label>
+				<div class="c-input__field-container">
+					<input class="c-input__field" />
+				</div>
+			</div>
+		`}
+	</Story>
+</Preview>
+
+<Preview>
+	<Story name="Large">
+		{() => `
+			<div class="c-input c-input--lg">
+				<label class="c-input__label">Label</label>
+				<div class="c-input__field-container"
+					<input class="c-input__field" />
+				</div>
+			</div>
+		`}
+	</Story>
+</Preview>

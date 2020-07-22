@@ -1,0 +1,100 @@
+/**
+ * Radio
+ * ----
+ */
+
+.c-radio {
+	@apply flex cursor-pointer;
+}
+
+/**
+ * Elements
+ */
+
+.c-radio__field {
+	@apply hidden appearance-none outline-none;
+}
+
+.c-radio__check-container {
+	@apply
+		flex
+		flex-shrink-0
+		items-center
+		justify-center
+		w-6
+		h-6
+		bg-white
+		border-2
+		border-solid
+		border-gray-200
+		rounded-full
+		transition-colors;
+}
+
+.c-radio__check {
+	@apply text-2xl text-white opacity-0 transition-opacity;
+}
+
+.c-radio__label {
+	@apply pt-1 pl-2 text-gray-400;
+}
+
+/**
+ * Modifiers
+ */
+
+.c-radio--bordered {
+	padding: theme('spacing.3') theme('spacing.4');
+	border: 2px solid theme('colors.gray.200');
+	border-radius: theme('borderRadius.lg');
+}
+
+.c-radio--icon {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: theme('spacing.6');
+	padding-top: theme('spacing.5');
+
+	.c-radio__check-container {
+		position: absolute;
+		top: theme('spacing.2');
+		right: theme('spacing.2');
+	}
+
+	.c-radio__icon {
+		margin-bottom: theme('spacing.3');
+		font-size: theme('fontSize.5xl');
+	}
+}
+
+.c-radio--active {
+	&.c-radio--bordered {
+		border-color: theme('colors.yellow.200');
+	}
+
+	&.c-radio--icon {
+		.c-radio__icon {
+			@apply text-yellow-200;
+		}
+	}
+}
+
+/**
+ * States
+ */
+
+.c-radio__field:checked {
+	~ .c-radio__check-container {
+		@apply bg-yellow-200 border-yellow-200;
+
+		.c-radio__check {
+			@apply opacity-100;
+		}
+	}
+
+	~ .c-radio__label {
+		color: theme('textColor.default');
+	}
+}

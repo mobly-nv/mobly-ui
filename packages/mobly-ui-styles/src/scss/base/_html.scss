@@ -1,0 +1,28 @@
+/**
+ * HTML
+ * ----
+ */
+
+html {
+	overflow-x: hidden;
+
+	font-family: theme('fontFamily');
+	font-size: theme('fontSize.base');
+	-webkit-text-size-adjust: 100%;
+	font-weight: theme('fontWeight.medium');
+	line-height: theme('lineHeight.text');
+	// Font variant
+	font-variant-ligatures: none;
+	// Smoothing
+	text-rendering: optimizeLegibility;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+
+	color: theme('textColor.default');
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}

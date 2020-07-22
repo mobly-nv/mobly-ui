@@ -1,0 +1,17 @@
+/**
+ * Libs
+ */
+
+@import '~normalize.css';
+
+/**
+ * Main
+ */
+
+@import 'config';
+@import 'base/index';
+@import 'components/index';
+
+@tailwind utilities;
+
+@import 'utils/index';

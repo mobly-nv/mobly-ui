@@ -1,0 +1,16 @@
+/**
+ * Icon
+ * ----
+ */
+
+.c-icon-fill {
+	@extend %c-icon;
+
+	font-family: "MoblyconsFill", monospace !important;
+}
+
+.c-icon-line {
+	@extend %c-icon;
+
+	font-family: "MoblyconsLine", monospace !important;
+}

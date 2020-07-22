@@ -1,0 +1,28 @@
+/**
+ * Loader
+ * ----
+ */
+
+@keyframes spin {
+	to {
+		transform: rotate(375deg);
+	}
+}
+
+.c-loader {
+	@apply inline-flex;
+}
+
+/**
+ * Elements
+ */
+
+.c-loader__indicator {
+	@apply w-12 h-12 border-4 border-solid rounded-full;
+
+	border-color: theme('colors.blue.120');
+	border-top-color: theme('colors.blue.180');
+
+	animation: spin 1s infinite theme('transitionTimingFunction.in-out');
+	transform: rotate(15deg);
+}

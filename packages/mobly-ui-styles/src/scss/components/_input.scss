@@ -1,0 +1,163 @@
+/**
+ * Input
+ * ----
+ */
+
+.c-input {
+	@apply relative;
+}
+
+/**
+ * Elements
+ */
+
+.c-input__label {
+	@apply
+		absolute
+		z-1
+		inline-block
+		font-medium
+		text-gray-400
+		text-lg
+		pointer-events-none
+		transform
+		-translate-y-1/2
+		duration-200
+		ease-in-out;
+
+	top: 50%;
+	left: theme('spacing.4');
+	transition-property: top, transform, font-size;
+}
+
+.c-input__field-container {
+	@apply
+		flex
+		h-12
+		leading-none
+		bg-white
+		border-2
+		border-solid
+		border-gray-200
+		rounded;
+}
+
+.c-input__field {
+	@apply
+		w-full
+		font-medium
+		text-lg
+		text-default
+		appearance-none
+		border-0
+		rounded
+		outline-none;
+
+	padding: rem(14px) theme('spacing.4') 0;
+}
+
+.c-input__addon {
+	@apply flex items-center justify-center w-12;
+
+	padding: rem(6px);
+
+	img {
+		@apply max-w-full w-full h-full;
+	}
+}
+
+.c-input__icon-container {
+	@apply flex items-center py-3;
+
+	.c-input__icon {
+		@apply text-gray-300 text-2xl;
+	}
+}
+
+/**
+ * Modifiers
+ */
+
+// Appearance
+.c-input--addon-left {
+	.c-input__label {
+		left: theme('spacing.16');
+	}
+
+	.c-input__addon {
+		@apply rounded-tl rounded-bl;
+	}
+}
+
+.c-input--no-float {
+	@apply static;
+
+	.c-input__label {
+		@apply static mb-1 transform-none;
+	}
+
+	.c-input__field {
+		@apply pt-0;
+	}
+}
+
+.c-input--required {
+	.c-input__label {
+		&::after {
+			@apply text-red;
+
+			content: '*';
+		}
+	}
+}
+
+// Special inputs
+.c-input--brand-eu {
+	.c-input__addon {
+		@apply bg-brand-eu;
+	}
+}
+
+// Size
+.c-input--lg {
+	.c-input__label,
+	.c-input__field {
+		@apply text-2xl;
+	}
+
+	.c-input__field-container {
+		height: rem(72px);
+	}
+
+	.c-input__field {
+		@apply pt-3;
+	}
+
+	&.c-input--addon-left {
+		.c-input__addon {
+			@apply p-2;
+		}
+	}
+}
+
+/**
+ * States
+ */
+
+.c-input--active:not(.c-input--no-float) {
+	.c-input__label {
+		@apply text-xs translate-y-0;
+
+		top: theme('spacing.2');
+	}
+
+	.c-input__field-container {
+		@apply shadow;
+	}
+
+	&.c-input--lg {
+		.c-input__label {
+			@apply text-lg;
+		}
+	}
+}

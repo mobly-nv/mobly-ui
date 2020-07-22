@@ -1,0 +1,54 @@
+/**
+ * Checkbox
+ * ----
+ */
+
+.c-checkbox {
+	@apply flex cursor-pointer;
+}
+
+/**
+ * Elements
+ */
+
+.c-checkbox__field {
+	@apply hidden appearance-none outline-none;
+}
+
+.c-checkbox__icon-container {
+	@apply
+		flex
+		flex-shrink-0
+		items-center
+		justify-center
+		w-6
+		h-6
+		bg-white
+		border-2
+		border-solid
+		border-gray-200
+		rounded
+		transition-colors;
+}
+
+.c-checkbox__icon {
+	@apply text-2xl text-white opacity-0 transition-opacity;
+}
+
+.c-checkbox__label {
+	@apply pt-1 pl-2 text-gray-400;
+}
+
+/**
+ * States
+ */
+
+.c-checkbox__field:checked {
+	~ .c-checkbox__icon-container {
+		@apply bg-yellow-200 border-yellow-200;
+
+		.c-checkbox__icon {
+			@apply opacity-100;
+		}
+	}
+}

@@ -1,0 +1,12 @@
+/**
+ * Functions
+ * ----
+ */
+
+/**
+ * Units
+ */
+
+@function rem($_pixel-value) {
+	@return $_pixel-value / 16px * 1rem;
+}

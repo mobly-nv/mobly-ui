@@ -1,0 +1,120 @@
+/**
+ * Button
+ * ----
+ */
+
+.c-button {
+	@extend %button-reset;
+
+	@apply
+		inline-block
+		px-8
+		py-3
+		font-bold
+		text-sm
+		text-white
+		uppercase
+		bg-yellow-200
+		border-2
+		border-solid
+		border-yellow-200
+		rounded-full
+		transition-colors
+		duration-200
+		ease-in-out;
+
+	min-height: theme('spacing.12');
+	line-height: 1.4;
+
+	&:disabled {
+		@apply cursor-not-allowed opacity-50 pointer-events-none;
+	}
+
+	&:hover {
+		@apply bg-yellow-100 border-yellow-100;
+	}
+}
+
+/**
+ * Modifiers
+ */
+
+// Variants
+.c-button--outline {
+	@apply bg-transparent text-yellow-200;
+
+	&:hover {
+		@apply text-yellow-100 bg-transparent border-yellow-100;
+	}
+}
+
+.c-button--transparent {
+	@apply bg-transparent border-transparent text-default;
+
+	&:hover {
+		@apply text-yellow-200 bg-transparent border-transparent;
+	}
+}
+
+// Icon
+.c-button--icon {
+	@apply px-4 py-0 text-center;
+
+	.c-button__icon {
+		@apply text-xl;
+	}
+}
+
+.c-button--icon-left {
+	.c-button__icon {
+		@apply mr-2;
+	}
+}
+
+.c-button--icon-right {
+	.c-button__icon {
+		@apply ml-2;
+	}
+}
+
+// Color
+.c-button--blue {
+	@apply bg-blue-200 border-blue-200;
+
+	&:hover {
+		@apply bg-blue-100 border-blue-100;
+	}
+
+	&.c-button--outline {
+		@apply bg-transparent text-blue-200;
+
+		&:hover {
+			@apply text-blue-100 bg-transparent border-blue-100;
+		}
+	}
+
+	&.c-button--transparent {
+		@apply bg-transparent border-transparent;
+
+		&:hover {
+			@apply text-blue-200 bg-transparent;
+		}
+	}
+}
+
+// Size
+.c-button--fluid {
+	@apply block w-full;
+}
+
+.c-button--sm {
+	min-height: theme('spacing.8');
+	padding: rem(4px) theme('spacing.6');
+}
+
+.c-button--xs {
+	@apply text-xs;
+
+	min-height: rem(28px);
+	padding: rem(2px) theme('spacing.4');
+}

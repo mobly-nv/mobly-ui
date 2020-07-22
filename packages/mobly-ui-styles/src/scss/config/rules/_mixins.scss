@@ -1,0 +1,18 @@
+/**
+ * Mixins
+ * ----
+ */
+
+@mixin font-face($_name, $_url, $_suffix: "", $_style: normal, $_weight: normal) {
+	@font-face {
+		font-family: $_name;
+		src: url($_url + ".eot");
+		src:
+			url("#{$_url}.woff2#{$_suffix}") format("woff2"),
+			url("#{$_url}.woff#{$_suffix}") format("woff"),
+			url("#{$_url}.ttf#{$_suffix}") format("truetype"),
+			url("#{$_url}.svg##{$_name}#{$_suffix}") format("svg");
+		font-style: $_style;
+		font-weight: $_weight;
+	}
+}
