@@ -18,7 +18,8 @@
     "build:types": "tsc -p tsconfig.build.json",
     "lint": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",
-    "lint:styles": "stylelint ./src/**/*.scss --cache"
+    "lint:styles": "stylelint ./src/**/*.scss --cache",
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "repository": {
     "type": "git",
@@ -47,7 +48,6 @@
     }
   },
   "dependencies": {
-    "@mobly/eslint-config-react-ts": "^1.0.0",
     "@mobly/react-mobile-picker": "^0.2.3",
     "@mobly/react-text-mask": "^5.5.0",
     "@mobly/ui-styles": "^0.1.0",
