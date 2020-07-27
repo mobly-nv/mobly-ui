@@ -5,6 +5,10 @@
 
 $modal-overlay-gradient: linear-gradient(135deg, rgba(#018fac, 0.48), rgba(#018fac, 0.88));
 
+.c-modal {
+	@apply hidden;
+}
+
 /**
  * Elements
  */
@@ -35,7 +39,7 @@ $modal-overlay-gradient: linear-gradient(135deg, rgba(#018fac, 0.48), rgba(#018f
 }
 
 .c-modal__close {
-	@apply absolute;
+	@apply absolute text-2xl;
 
 	top: theme('spacing.2');
 	right: theme('spacing.2');
