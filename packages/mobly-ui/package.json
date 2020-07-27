@@ -19,7 +19,7 @@
     "lint": "npm run lint:scripts && npm run lint:styles",
     "lint:scripts": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",
     "lint:styles": "stylelint ./src/**/*.scss --cache",
-    "prepublishOnly": "npm run lint && npm run build"
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
