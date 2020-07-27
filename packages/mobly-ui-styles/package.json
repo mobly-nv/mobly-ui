@@ -15,7 +15,7 @@
     "start": "start-storybook -p 6006 -s ../../storybook/static",
     "build": "webpack",
     "build:storybook": "build-storybook",
-    "lint": "stylelint ./scss --cache --syntax scss",
+    "lint": "stylelint ./src/scss --cache --syntax scss",
     "prepublishOnly": "npm run lint && npm run build"
   },
   "keywords": [
