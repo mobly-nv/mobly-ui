@@ -1,6 +1,6 @@
 {
   "name": "@mobly/ui-styles",
-  "version": "0.1.0",
+  "version": "1.0.0-alpha.0",
   "description": "Styles in (s)css for Mobly",
   "main": "build/css/main.css",
   "files": [
@@ -34,7 +34,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.10.5",
-    "@mobly/stylelint-config-scss": "^1.0.0",
+    "@mobly/stylelint-config-scss": "^1.0.1",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/html": "^5.3.19",

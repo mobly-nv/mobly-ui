@@ -1,6 +1,6 @@
 {
   "name": "@mobly/stylelint-config-scss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stylelint config for SASS projects with tailwindcss support",
   "main": "index.js",
   "files": [
