@@ -1,0 +1,86 @@
+{
+  "name": "@mobly/ui-react",
+  "version": "0.1.0",
+  "description": "Mobly UI component library for react",
+  "main": "build/bundle.js",
+  "types": "build/types/index.d.ts",
+  "files": [
+    "build"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "start-storybook -p 6006 -s ../../storybook/static",
+    "build": "webpack && npm run build:types",
+    "build:storybook": "build-storybook",
+    "build:types": "tsc -p tsconfig.build.json",
+    "lint": "npm run lint:scripts && npm run lint:styles",
+    "lint:scripts": "eslint --cache --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:styles": "stylelint ./src/**/*.scss --cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mobly-nv/mobly-ui.git"
+  },
+  "keywords": [
+    "Mobly",
+    "React",
+    "components",
+    "Storybook"
+  ],
+  "author": "Andry Charlier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mobly-nv/mobly-ui/issues"
+  },
+  "homepage": "https://github.com/mobly-nv/mobly-ui#readme",
+  "peerDependencies": {
+    "@types/react": "^16.9.34",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "peerDependenciesMeta": {
+    "@types/react": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@mobly/eslint-config-react-ts": "^1.0.0",
+    "@mobly/react-mobile-picker": "^0.2.3",
+    "@mobly/react-text-mask": "^5.5.0",
+    "@mobly/ui-styles": "^0.1.0",
+    "classnames": "^2.2.6",
+    "date-fns": "^2.14.0",
+    "react-device-detect": "^1.13.1",
+    "react-select": "^3.1.0",
+    "text-mask-addons": "^3.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@mobly/eslint-config-react-ts": "^1.0.0",
+    "@mobly/stylelint-config-scss": "^1.0.0",
+    "@storybook/addon-actions": "^5.3.19",
+    "@storybook/addon-docs": "^5.3.19",
+    "@storybook/react": "^5.3.19",
+    "@types/classnames": "^2.2.10",
+    "@types/react-select": "^3.0.14",
+    "autoprefixer": "^9.8.5",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "css-loader": "^3.6.0",
+    "eslint": "^7.5.0",
+    "node-sass": "^4.14.1",
+    "postcss-loader": "^3.0.0",
+    "sass-loader": "^9.0.2",
+    "style-loader": "^1.2.1",
+    "stylelint": "^13.6.1",
+    "tailwindcss": "^1.5.2",
+    "typescript": "^3.9.7",
+    "webpack-cli": "^3.3.12"
+  }
+}

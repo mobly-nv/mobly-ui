@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "outDir": "build/types",
+    "rootDir": "./src",
+    // "types": ["react"]
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": [
+    "src/**/*.stories.ts",
+    "src/**/*.test.ts",
+  ]
+}
