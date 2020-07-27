@@ -1,0 +1,26 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+
+import Radio from './Radio';
+
+<Meta title="Radio" />
+
+# Radio
+
+<Preview>
+	<Story name="Default">
+		{() => {
+			const [checked, setChecked] = useState(false);
+			return (
+				<Radio
+					bordered
+					checked={checked}
+					label="Radio"
+					onChange={(e) => {
+						setChecked(e.target.checked);
+					}}
+				/>
+			);
+		}}
+	</Story>
+</Preview>

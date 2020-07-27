@@ -1,0 +1,23 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+
+import { Button } from '../Button';
+import Modal from './Modal';
+
+<Meta title="Modal" />
+
+# Modal
+
+<Preview>
+	<Story name="Default">
+		{() => {
+			const [isOpen, setIsOpen] = useState(false);
+			return (
+				<>
+					<Button onClick={() => setIsOpen(true)}>Open modal</Button>
+					<Modal onClose={() => setIsOpen(false)} open={isOpen}>This is a modal</Modal>
+				</>
+			);
+		}}
+	</Story>
+</Preview>

@@ -1,0 +1,24 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import {useState} from 'react';
+
+import Input from './Input';
+
+<Meta title="Input" />
+
+# Input
+
+<Preview>
+	<Story name="Default">
+		{() => {
+			const [value, setValue] = useState('');
+			return (
+				<Input
+					label="Label"
+					name="input"
+					onChange={(e) => setValue(e.target.value)}
+					value={value}
+				/>
+			);
+		}}
+	</Story>
+</Preview>

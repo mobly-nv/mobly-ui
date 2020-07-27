@@ -1,0 +1,34 @@
+@import '~@mobly/ui-styles/src/scss/config/rules';
+
+.c-select__field {
+	width: 100%;
+	padding: rem(14px) theme('spacing.12') 0 theme('spacing.4');
+	border: none;
+	font-weight: theme('fontWeight.medium');
+	font-size: theme('fontSize.lg');
+	appearance: none;
+	color: theme('textColor.default');
+	opacity: 0;
+	transition:
+		opacity
+		theme('transitionDuration.200')
+		theme('transitionTimingFunction.ease-in-out');
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.c-select__icon {
+	position: absolute;
+	top: 50%;
+	right: theme('spacing.3');
+	transform: translateY(-50%);
+	font-size: theme('fontSize.xl');
+}
+
+.c-select--active {
+	.c-select__field {
+		opacity: 1;
+	}
+}

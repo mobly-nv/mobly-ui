@@ -1,0 +1,13 @@
+// Vendor overrides
+.c-datepicker-mobile__picker {
+	.picker-container {
+		.picker-inner {
+			@apply p-0;
+		}
+
+		.picker-scroller {
+			@apply duration-75;
+			// transition: 50ms;
+		}
+	}
+}

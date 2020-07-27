@@ -1,0 +1,26 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+
+import Switch from './Switch';
+
+<Meta title="Switch" />
+
+# Switch
+
+<Preview>
+	<Story name="Default">
+		{() => {
+			const [value, setValue] = useState('switch-1');
+			return (
+				<Switch
+					onChange={(e) => setValue(e.target.value)}
+					options={[
+						{ label: 'Switch 1', value: 'switch-1' },
+						{ label: 'Switch 2', value: 'switch-2' }
+					]}
+					value={value}
+				/>
+			);
+		}}
+	</Story>
+</Preview>

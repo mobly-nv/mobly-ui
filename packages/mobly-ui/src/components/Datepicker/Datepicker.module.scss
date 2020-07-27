@@ -1,0 +1,13 @@
+.c-datepicker {
+	&:not(.c-input--no-float) {
+		.c-datepicker__field {
+			@apply opacity-0 transition-opacity duration-200 ease-in-out;
+		}
+
+		&.c-datepicker--active {
+			.c-datepicker__field {
+				@apply opacity-100;
+			}
+		}
+	}
+}

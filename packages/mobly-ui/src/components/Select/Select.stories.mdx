@@ -1,0 +1,28 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+
+import Select from './Select';
+
+<Meta title="Select" />
+
+# Select
+
+<Preview>
+	<Story name="Default">
+		{() => {
+			const [value, setValue] = useState('');
+			return (
+				<Select
+					label="Select"
+					onChange={(e) => setValue(e.target.value)}
+					options={[
+						{ disabled: true, label: 'Select an option', value: '' },
+						{ label: 'Option 1', value: 'option-1' },
+						{ label: 'Option 2', value: 'option-2' },
+					]}
+					value={value}
+				/>
+			);
+		}}
+	</Story>
+</Preview>

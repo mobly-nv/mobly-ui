@@ -1,0 +1,26 @@
+import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
+import { useState } from 'react';
+
+import Datepicker from './Datepicker';
+
+<Meta title="Datepicker" />
+
+# Datepicker
+
+<Preview>
+	<Story name="Default">
+		{() => {
+			const [value, setValue] = useState('01/01/2020');
+			return (
+				<Datepicker
+					label="Date"
+					name="date"
+					onChange={(newValue) => {
+						setValue(newValue);
+					}}
+					value={value}
+				/>
+			);
+		}}
+	</Story>
+</Preview>

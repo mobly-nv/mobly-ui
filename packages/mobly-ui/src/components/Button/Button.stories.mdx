@@ -1,0 +1,74 @@
+import { Meta, Story, Preview, Props } from '@storybook/addon-docs/blocks';
+
+import Button from './Button';
+
+<Meta title="Button" component={Button} />
+
+# Button
+
+A button component
+
+## Primary (default)
+
+<Preview>
+	<Story name="Primary">
+		<Button>Click me!</Button>
+	</Story>
+</Preview>
+
+## Secondary
+
+<Preview>
+	<Story name="Secondary">
+		<Button secondary>Click me!</Button>
+	</Story>
+</Preview>
+
+## Variants
+
+### Outline
+
+<Preview>
+	<Story name="Outline">
+		<>
+			<Button variant="outline">Click me!</Button>
+			<Button secondary variant="outline">Click me!</Button>
+		</>
+	</Story>
+</Preview>
+
+### Transparent
+
+<Preview>
+	<Story name="Transparent">
+		<>
+			<Button variant="transparent">Click me!</Button>
+			<Button secondary variant="transparent">Click me!</Button>
+		</>
+	</Story>
+</Preview>
+
+## Sizes
+
+<Preview>
+	<Story name="Fluid">
+		<>
+			<Button size="fluid">Click me!</Button>
+			<Button secondary size="fluid">Click me!</Button>
+			<Button size="fluid" variant="outline">Click me!</Button>
+			<Button secondary size="fluid" variant="transparent">Click me!</Button>
+		</>
+	</Story>
+	<Story name="Small">
+		<>
+			<Button size="sm">Click me!</Button>
+			<Button secondary size="sm">Click me!</Button>
+		</>
+	</Story>
+	<Story name="Extra small">
+		<>
+			<Button size="xs">Click me!</Button>
+			<Button secondary size="xs">Click me!</Button>
+		</>
+	</Story>
+</Preview>
