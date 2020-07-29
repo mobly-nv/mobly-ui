@@ -1,6 +1,6 @@
 {
   "name": "@mobly/ui-styles",
-  "version": "1.0.0-alpha.0",
+  "version": "1.0.0",
   "description": "Styles in (s)css for Mobly",
   "main": "build/css/main.css",
   "files": [
