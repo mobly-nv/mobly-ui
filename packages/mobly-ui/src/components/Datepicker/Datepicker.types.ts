@@ -7,6 +7,7 @@ export interface DatepickerProps extends Omit<FieldProps, 'onBlur' | 'onChange' 
 	buttonConfirmLabel?: string;
 	defaultValue?: string;
 	maxDate?: string;
+	monthLabels?: string[];
 	invalidDateLabel?: string;
 	onBlur?: (value: string) => void;
 	onChange?: (value: string) => void;

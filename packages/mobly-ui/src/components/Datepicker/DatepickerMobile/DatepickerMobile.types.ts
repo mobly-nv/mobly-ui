@@ -7,6 +7,7 @@ export interface DatepickerMobileProps {
 	invalidDateLabel?: string;
 	label?: ReactNode;
 	maxDate: string;
+	monthLabels: string[];
 	name: string;
 	onBlur: (e: string) => void;
 	onChange: (e: string) => void;

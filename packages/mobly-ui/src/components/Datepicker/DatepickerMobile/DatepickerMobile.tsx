@@ -1,16 +1,15 @@
 import Picker from '@mobly/react-mobile-picker';
+import classnames from 'classnames/bind';
 import { getDaysInMonth } from 'date-fns';
 import React, { FC, useState } from 'react';
 
 import { Button } from '../../Button';
-import { Modal } from '../../Modal';
 import inputStyles from '../../Input/Input.module.scss';
-import { MONTHS } from '../Datepicker.const';
+import { Modal } from '../../Modal';
 
 import styles from './DatepickerMobile.module.scss';
 import { DatepickerMobileProps, OptionGroups, ValueGroups } from './DatepickerMobile.types';
 import { generateNumberArray, getInputValue, getMonthIndex } from './DatepickerMobile.utils';
-import classnames from 'classnames/bind';
 
 const cx = classnames.bind({ ...inputStyles, ...styles });
 
@@ -20,6 +19,8 @@ const DatepickerMobile: FC<DatepickerMobileProps> = ({
 	defaultValue,
 	label,
 	maxDate,
+	monthLabels,
+	name,
 	invalidDateLabel = 'Invalid date',
 	onBlur,
 	onChange,
@@ -40,18 +41,18 @@ const DatepickerMobile: FC<DatepickerMobileProps> = ({
 			1,
 			getDaysInMonth(new Date(parseInt(currentYear, 10), getMonthIndex(currentMonth)))
 		),
-		month: MONTHS.map(m => m),
+		month: monthLabels,
 		year: generateNumberArray(1900, parseInt(maxYear, 10)),
 	});
 	const [valueGroups, setvalueGroups] = useState<ValueGroups>({
 		day: dayValue || defaultDay || maxDay,
-		month: MONTHS[getMonthIndex(currentMonth)],
+		month: monthLabels[getMonthIndex(currentMonth)],
 		year: currentYear,
 	});
 
 	// Methods
 	// ------------------------------------------------------------------------- /
-	const toggleModal = (show = true) => {
+	const toggleModal = (show = true): void => {
 		setShowModal(show);
 
 		if (!show) {
@@ -61,20 +62,20 @@ const DatepickerMobile: FC<DatepickerMobileProps> = ({
 		}
 	};
 
-	const handleChange = (name: keyof OptionGroups, newValue: string) => {
+	const handleChange = (optionGroup: keyof OptionGroups, newValue: string): void => {
 		let newOptionGroups = { ...optionGroups };
-		let newValueGroups = { ...valueGroups, [name]: newValue };
+		let newValueGroups = { ...valueGroups, [optionGroup]: newValue };
 
-		if (name === 'month' || name === 'year') {
+		if (optionGroup === 'month' || optionGroup === 'year') {
 			// Update amount of days based on month and year
 			const findOptionIndex = (option: keyof OptionGroups, optionVal: string): number =>
 				optionGroups[option].findIndex(o => o === optionVal);
 
 			const newMonth =
-				name === 'month'
+				optionGroup === 'month'
 					? findOptionIndex('month', newValue)
 					: findOptionIndex('month', valueGroups.month);
-			const newYear = parseInt(name === 'year' ? newValue : valueGroups.year, 10);
+			const newYear = parseInt(optionGroup === 'year' ? newValue : valueGroups.year, 10);
 
 			newOptionGroups = {
 				...newOptionGroups,

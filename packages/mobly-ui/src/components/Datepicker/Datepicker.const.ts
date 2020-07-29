@@ -1,6 +1,6 @@
 export const DATE_FORMAT = 'dd/MM/yyyy';
 
-export const MONTHS = [
+export const MONTH_LABELS = [
 	'jan',
 	'feb',
 	'mar',

@@ -8,7 +8,7 @@ import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrect
 import { Input } from '../Input';
 import inputStyles from '../Input/Input.module.scss';
 
-import { DATE_FORMAT } from './Datepicker.const';
+import { DATE_FORMAT, MONTH_LABELS } from './Datepicker.const';
 import styles from './Datepicker.module.scss';
 import { DatepickerProps } from './Datepicker.types';
 import { DatepickerMobile } from './DatepickerMobile';
@@ -25,6 +25,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
 	invalidDateLabel,
 	label,
 	maxDate = format(new Date(), DATE_FORMAT),
+	monthLabels = MONTH_LABELS,
 	name,
 	onBlur,
 	onChange,
@@ -80,6 +81,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
 					defaultValue={defaultValue}
 					label={label}
 					maxDate={maxDate}
+					monthLabels={monthLabels}
 					name={name}
 					onBlur={handleBlur}
 					onChange={handleChange}
