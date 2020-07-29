@@ -6,7 +6,7 @@
   "files": [
     "build/css",
     "src/scss",
-    "*.js"
+    "config.js"
   ],
   "publishConfig": {
     "access": "public"
