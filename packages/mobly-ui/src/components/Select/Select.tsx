@@ -11,6 +11,7 @@ const cx = classnames.bind(styles);
 
 const Select: React.FC<SelectProps> = ({
 	className,
+	errored = false,
 	id,
 	label,
 	name,
@@ -41,6 +42,7 @@ const Select: React.FC<SelectProps> = ({
 		<Input
 			activeClassName={cx('c-select--active')}
 			className={cx(className, 'c-select')}
+			errored={errored}
 			focused={isFocused}
 			label={label}
 			name={name}
