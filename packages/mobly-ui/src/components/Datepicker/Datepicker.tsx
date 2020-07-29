@@ -20,6 +20,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
 	buttonConfirmLabel,
 	className,
 	defaultValue = '',
+	errored = false,
 	id,
 	invalidDateLabel,
 	label,
@@ -64,6 +65,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
 		<Input
 			activeClassName={cx('c-datepicker--active')}
 			className={cx(className, 'c-datepicker')}
+			errored={errored}
 			focused={isFocused}
 			label={label}
 			name={name}
@@ -82,7 +84,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
 					onBlur={handleBlur}
 					onChange={handleChange}
 					onFocus={handleFocus}
-					value={value}
+					value={value || ''}
 				/>
 			) : (
 				<MaskedInput

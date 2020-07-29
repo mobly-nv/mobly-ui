@@ -11,6 +11,7 @@ const cx = classnames.bind(styles);
 const Checkbox: React.FC<CheckboxProps> = ({
 	checked,
 	className,
+	errored = false,
 	id,
 	label,
 	name,
@@ -23,7 +24,11 @@ const Checkbox: React.FC<CheckboxProps> = ({
 	value,
 }) => {
 	return (
-		<label className={cx(className, 'c-checkbox')} htmlFor={id || name} style={style}>
+		<label
+			className={cx(className, 'c-checkbox', { 'c-checkbox--error': errored })}
+			htmlFor={id || name}
+			style={style}
+		>
 			<input
 				checked={checked}
 				className={cx('c-checkbox__field')}

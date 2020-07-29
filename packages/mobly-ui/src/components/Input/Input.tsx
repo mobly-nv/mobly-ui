@@ -11,6 +11,7 @@ const Input: React.FC<InputProps> = ({
 	addon,
 	children,
 	className,
+	errored = false,
 	focused = false,
 	id,
 	label,
@@ -31,9 +32,7 @@ const Input: React.FC<InputProps> = ({
 	const [isFocused, setIsFocused] = useState(focused);
 
 	useEffect(() => {
-		if (focused !== isFocused) {
-			setIsFocused(focused);
-		}
+		setIsFocused(focused);
 	}, [focused]);
 
 	const handleBlur = (e: React.ChangeEvent<HTMLInputElement>): void => {
@@ -62,6 +61,7 @@ const Input: React.FC<InputProps> = ({
 					'c-input--required': required,
 					'c-input--brand-eu': variant === 'brand-eu',
 					'c-input--lg': size === 'lg',
+					'c-input--error': errored,
 				}
 			)}
 			style={style}

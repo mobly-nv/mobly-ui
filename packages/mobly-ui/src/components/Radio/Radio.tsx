@@ -14,6 +14,7 @@ const Radio: React.FC<RadioProps> = ({
 	className,
 	bordered,
 	disabled,
+	errored = false,
 	icon,
 	id,
 	label,
@@ -32,6 +33,7 @@ const Radio: React.FC<RadioProps> = ({
 				'c-radio--active': checked,
 				'c-radio--bordered': bordered,
 				'c-radio--icon': !!icon,
+				'c-radio--error': errored,
 			})}
 			htmlFor={id || name}
 			style={style}

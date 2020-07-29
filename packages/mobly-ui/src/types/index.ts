@@ -7,6 +7,7 @@ export interface DefaultComponentProps {
 
 export interface FieldProps<Element = HTMLInputElement> extends DefaultComponentProps {
 	disabled?: boolean;
+	errored?: boolean;
 	id?: string;
 	label?: ReactNode;
 	name: string;
