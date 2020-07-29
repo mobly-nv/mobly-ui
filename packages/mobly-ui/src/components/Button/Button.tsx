@@ -12,6 +12,7 @@ const Button: React.FC<ButtonProps> = ({
 	className,
 	children,
 	disabled,
+	icon,
 	iconLeft,
 	iconRight,
 	onClick,
@@ -25,8 +26,12 @@ const Button: React.FC<ButtonProps> = ({
 		<button
 			className={cx(className, 'c-button', {
 				'c-button--blue': secondary,
+				'c-button--link': variant === 'link',
 				'c-button--outline': variant === 'outline',
 				'c-button--transparent': variant === 'transparent',
+				'c-button--icon': icon,
+				'c-button--icon-left': iconLeft,
+				'c-button--icon-right': iconRight,
 				'c-button--fluid': size === 'fluid',
 				'c-button--sm': size === 'sm',
 				'c-button--xs': size === 'xs',
@@ -36,9 +41,15 @@ const Button: React.FC<ButtonProps> = ({
 			style={style}
 			type={type}
 		>
-			{iconLeft && <Icon className={cx('c-button__icon')} name={iconLeft} />}
-			{children}
-			{iconRight && <Icon className={cx('c-button__icon')} name={iconRight} />}
+			{icon ? (
+				<Icon className={cx('c-button__icon')} name={icon} />
+			) : (
+				<>
+					{iconLeft && <Icon className={cx('c-button__icon')} name={iconLeft} />}
+					{children}
+					{iconRight && <Icon className={cx('c-button__icon')} name={iconRight} />}
+				</>
+			)}
 		</button>
 	);
 };
