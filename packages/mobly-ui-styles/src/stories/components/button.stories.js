@@ -18,6 +18,7 @@ export const Default = () => createButton();
 export const Blue = () => createButton(['c-button--blue']);
 
 // Variants
+export const Link = () => createButton(['c-button--link']);
 export const Outline = () => createButton(['c-button--outline']);
 export const Transparent = () => createButton(['c-button--transparent']);
 

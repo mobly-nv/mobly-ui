@@ -49,12 +49,11 @@
 }
 
 %c-link {
-	text-decoration: none;
-	// @apply text-blue-200 no-underline duration-200 ease-in-out;
+	@apply text-blue-200 no-underline duration-200 ease-in-out;
 
-	// transition-property: color;
+	transition-property: color;
 
-	// &:hover {
-	// 	@apply text-default;
-	// }
+	&:hover {
+		@apply text-default;
+	}
 }

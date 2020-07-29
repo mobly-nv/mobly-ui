@@ -40,6 +40,18 @@
  */
 
 // Variants
+.c-button--link {
+	@apply p-0 font-medium text-base text-blue-200 normal-case bg-transparent border-0;
+
+	@extend %c-link;
+
+	min-height: auto;
+
+	&:hover {
+		@apply bg-transparent;
+	}
+}
+
 .c-button--outline {
 	@apply bg-transparent text-yellow-200;
 
@@ -58,7 +70,7 @@
 
 // Icon
 .c-button--icon {
-	@apply px-4 py-0 text-center;
+	@apply px-3 py-0 text-center;
 
 	.c-button__icon {
 		@apply text-xl;
