@@ -6,12 +6,12 @@ export interface DatepickerProps extends Omit<FieldProps, 'onBlur' | 'onChange' 
 	buttonCancelLabel?: string;
 	buttonConfirmLabel?: string;
 	defaultValue?: string;
-	maxDate: string;
+	maxDate?: string;
 	invalidDateLabel?: string;
-	onBlur: (value: string) => void;
-	onChange: (value: string) => void;
-	onFocus: (value: string) => void;
-	value: string;
+	onBlur?: (value: string) => void;
+	onChange?: (value: string) => void;
+	onFocus?: (value: string) => void;
+	value?: string;
 }
 
 export interface MaskedInputRenderProps extends Omit<DatepickerProps, 'onChange'> {
