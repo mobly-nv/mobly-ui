@@ -15,6 +15,6 @@ module.exports = {
 		'webpack.config.js',
 	],
 	extends: [
-		'@mobly/eslint-config-react-ts',
+		path.resolve(__dirname, '../eslint-config-react-ts'),
 	],
 };
