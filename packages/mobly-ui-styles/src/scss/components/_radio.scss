@@ -28,7 +28,9 @@
 		border-solid
 		border-gray-200
 		rounded-full
-		transition-colors;
+		transition-colors
+		duration-200
+		ease-in-out;
 }
 
 .c-radio__check {
@@ -44,6 +46,8 @@
  */
 
 .c-radio--bordered {
+	@apply transition-colors duration-200 ease-in-out;
+
 	padding: theme('spacing.3') theme('spacing.4');
 	border: 2px solid theme('colors.gray.200');
 	border-radius: theme('borderRadius.lg');
@@ -78,6 +82,12 @@
 		.c-radio__icon {
 			@apply text-yellow-200;
 		}
+	}
+}
+
+.c-radio--error {
+	.c-radio__check-container {
+		@apply border-red;
 	}
 }
 

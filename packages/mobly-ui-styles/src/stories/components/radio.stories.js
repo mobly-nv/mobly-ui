@@ -3,12 +3,8 @@ import { action } from '@storybook/addon-actions';
 import { createElement } from '../helpers';
 import { createIcon } from './icon.stories';
 
-export default {
-	title: 'Radio',
-};
-
-export const Default = () => {
-	const radio = createElement(['c-radio'], 'label');
+const createRadio = (classList = [], innerText = 'Choose me!') => {
+	const radio = createElement(['c-radio', ...classList], 'label');
 	radio.for = 'radio';
 	const input = createElement(['c-radio__field'], 'input');
 	input.checked = false;
@@ -20,10 +16,16 @@ export const Default = () => {
 	const icon = createIcon(['c-radio__check'], 'check-small');
 	iconWrapper.append(icon);
 	const label = createElement(['c-radio__label'], 'span');
-	label.innerText = 'Radio 1'
+	label.innerText = innerText;
 	radio.append(input, iconWrapper, label);
 	return radio;
+}
+
+export default {
+	title: 'Radio',
 };
+
+export const Default = () => createRadio();
 
 export const Bordered = () => `
 	<label class="c-radio c-radio--bordered" for="radio-bordered">
@@ -35,7 +37,7 @@ export const Bordered = () => `
 	</label>
 
 	<label class="c-radio c-radio--bordered c-radio--active" for="radio-active">
-		<input class="c-radio__field" type="radio" id="radio-active" />
+		<input checked class="c-radio__field" type="radio" id="radio-active" />
 		<span class="c-radio__check-container">
 			<span class="c-radio__check c-icon-fill">check-small</span>
 		</span>
@@ -53,7 +55,7 @@ export const Icon = () => `
 	</label>
 
 	<label class="c-radio c-radio--bordered c-radio--icon c-radio--active" for="radio-active">
-		<input class="c-radio__field" type="radio" id="radio-active" />
+		<input checked class="c-radio__field" type="radio" id="radio-active" />
 		<span class="c-radio__check-container">
 			<span class="c-radio__check c-icon-fill">check-small</span>
 		</span>
@@ -64,3 +66,5 @@ export const Icon = () => `
 		</div>
 	</label>
 `;
+
+export const error = () => createRadio(['c-radio--error']);

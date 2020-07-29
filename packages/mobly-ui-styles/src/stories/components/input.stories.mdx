@@ -40,7 +40,7 @@ import { createElement } from '../helpers';
 				<label class="c-input__label">Label</label>
 				<div class="c-input__field-container">
 					<div class="c-input__addon">
-						<img src="/assets/img/eu.png" alt="belgië eu logo" />
+						<img src="/static/img/eu.png" alt="belgië eu logo" />
 					</div>
 					<input class="c-input__field" />
 				</div>
@@ -66,6 +66,19 @@ import { createElement } from '../helpers';
 	<Story name="Large">
 		{() => `
 			<div class="c-input c-input--lg">
+				<label class="c-input__label">Label</label>
+				<div class="c-input__field-container"
+					<input class="c-input__field" />
+				</div>
+			</div>
+		`}
+	</Story>
+</Preview>
+
+<Preview>
+	<Story name="Error">
+		{() => `
+			<div class="c-input c-input--error">
 				<label class="c-input__label">Label</label>
 				<div class="c-input__field-container"
 					<input class="c-input__field" />

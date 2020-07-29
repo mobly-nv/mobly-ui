@@ -39,7 +39,10 @@
 		border-2
 		border-solid
 		border-gray-200
-		rounded;
+		rounded
+		transition-colors
+		duration-200
+		ease-in-out;
 }
 
 .c-input__field {
@@ -143,6 +146,12 @@
 /**
  * States
  */
+
+.c-input--error {
+	.c-input__field-container {
+		@apply border-red;
+	}
+}
 
 .c-input--active:not(.c-input--no-float) {
 	.c-input__label {

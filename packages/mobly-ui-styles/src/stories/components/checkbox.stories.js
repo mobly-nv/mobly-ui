@@ -3,12 +3,8 @@ import { action } from '@storybook/addon-actions';
 import { createElement } from '../helpers';
 import { createIcon } from './icon.stories';
 
-export default {
-	title: 'Checkbox',
-};
-
-export const Default = () => {
-	const checkbox = createElement(['c-checkbox'], 'label');
+const createCheckbox = (classList = [], innerText = 'Check me!') => {
+	const checkbox = createElement(['c-checkbox', ...classList], 'label');
 	checkbox.for = 'checkbox';
 	const input = createElement(['c-checkbox__field'], 'input');
 	input.checked = false;
@@ -20,7 +16,15 @@ export const Default = () => {
 	const icon = createIcon(['c-checkbox__icon'], 'check-small');
 	iconWrapper.append(icon);
 	const label = createElement(['c-checkbox__label'], 'span');
-	label.innerText = 'Check 1'
+	label.innerText = innerText
 	checkbox.append(input, iconWrapper, label);
 	return checkbox;
 };
+
+export default {
+	title: 'Checkbox',
+};
+
+export const Default = () => createCheckbox();
+
+export const Error = () => createCheckbox(['c-checkbox--error']);

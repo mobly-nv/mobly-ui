@@ -28,7 +28,9 @@
 		border-solid
 		border-gray-200
 		rounded
-		transition-colors;
+		transition-colors
+		duration-200
+		ease-in-out;
 }
 
 .c-checkbox__icon {
@@ -37,6 +39,16 @@
 
 .c-checkbox__label {
 	@apply pt-1 pl-2 text-gray-400;
+}
+
+/**
+ * Modifiers
+ */
+
+.c-checkbox--error {
+	.c-checkbox__icon-container {
+		@apply border-red;
+	}
 }
 
 /**
