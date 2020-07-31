@@ -1,11 +1,11 @@
 import { DefaultComponentProps } from '../../types';
-import { IconNames } from '../Icon';
+import { IconNames, IconProps } from '../Icon';
 
 export interface ButtonProps extends DefaultComponentProps {
 	disabled?: boolean;
-	icon?: IconNames;
-	iconLeft?: IconNames;
-	iconRight?: IconNames;
+	icon?: IconNames | IconProps;
+	iconLeft?: IconNames | IconProps;
+	iconRight?: IconNames | IconProps;
 	onClick?: () => void;
 	secondary?: boolean;
 	size?: 'fluid' | 'sm' | 'xs';

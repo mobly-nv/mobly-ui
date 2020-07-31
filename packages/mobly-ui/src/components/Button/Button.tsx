@@ -1,6 +1,7 @@
 import classnames from 'classnames/bind';
 import React from 'react';
 
+import { getIconProps } from '../../helpers';
 import { Icon } from '../Icon';
 
 import styles from './Button.module.scss';
@@ -42,12 +43,16 @@ const Button: React.FC<ButtonProps> = ({
 			type={type}
 		>
 			{icon ? (
-				<Icon className={cx('c-button__icon')} name={icon} />
+				<Icon className={cx('c-button__icon')} {...getIconProps(icon)} />
 			) : (
 				<>
-					{iconLeft && <Icon className={cx('c-button__icon')} name={iconLeft} />}
+					{iconLeft && (
+						<Icon className={cx('c-button__icon')} {...getIconProps(iconLeft)} />
+					)}
 					{children}
-					{iconRight && <Icon className={cx('c-button__icon')} name={iconRight} />}
+					{iconRight && (
+						<Icon className={cx('c-button__icon')} {...getIconProps(iconRight)} />
+					)}
 				</>
 			)}
 		</button>

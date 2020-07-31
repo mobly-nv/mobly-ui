@@ -1,6 +1,7 @@
 import classnames from 'classnames/bind';
 import React from 'react';
 
+import { getIconProps } from '../../helpers';
 import { Icon } from '../Icon';
 
 import styles from './Radio.module.scss';
@@ -55,7 +56,7 @@ const Radio: React.FC<RadioProps> = ({
 			<span className={cx('c-radio__check-container')}>
 				<Icon className={cx('c-radio__check')} name="check-small" />
 			</span>
-			{icon && <Icon className={cx('c-radio__icon')} name={icon} />}
+			{icon && <Icon className={cx('c-radio__icon')} {...getIconProps(icon)} />}
 			{children || <span className={cx('c-radio__label')}>{label}</span>}
 		</label>
 	);
