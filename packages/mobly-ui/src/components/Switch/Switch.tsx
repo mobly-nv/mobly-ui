@@ -25,7 +25,7 @@ const Switch: React.FC<SwitchProps> = ({
 				const switchId = `${id || name}-${index}`;
 
 				return (
-					<label className={cx('c-switch__option')} htmlFor={switchId}>
+					<label key={switchId} className={cx('c-switch__option')} htmlFor={switchId}>
 						<input
 							checked={option.value === value}
 							className={cx('c-switch__input')}
