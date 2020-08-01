@@ -20,6 +20,8 @@ Then, add this to your `.stylelintrc.*` file:
 }
 ```
 
+## Dependencies
+
 Used plugins:
 * [stylelint-scss](https://github.com/kristerkari/stylelint-scss)
 

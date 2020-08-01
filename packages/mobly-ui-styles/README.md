@@ -1,43 +1,88 @@
-# Mobly styles v1.0.0 #
+# @mobly/ui-styles
 
-Style guide for Mobly. This package build contains:
+Mobly UI styles.
 
-* A single minified css file containing all the styles
-* The whole scss contents to only use the styles you need
+## Install
 
----
-## Install ##
+Install dependencies:
 
-```bash
-npm i @mobly/styles
+```shell
+npm i @mobly/ui-styles
 ```
 
----
-## Setup ##
+## Usage
 
-### System Dependencies ###
+This package is built with [Sass](https://sass-lang.com/) and [tailwindcss](https://tailwindcss.com/).
 
-* [Node 10.15.x](https://nodejs.org/en/)
+```css
+/* This will import the main.css file */
+@import '@mobly/ui-styles';
 
-### Init ###
+/* For more granular imports we also provide */
+@import '@mobly/ui-styles/build/css/fonts.css';
+@import '@mobly/ui-styles/build/css/base.css';
+@import '@mobly/ui-styles/build/css/components.css';
+@import '@mobly/ui-styles/build/css/utils.css';
+```
 
-* `nvm use` [Check out NVM AutoSwitch](https://github.com/lalitkapoor/nvm-auto-switch)
-* `npm install` or `npm i`
-* `npm start`
+We also exported our custom tailwindcss config for referencing it in JavaScript
 
----
-## Codebase ##
+```javascript
+import config from '@mobly/ui-styles/config';
 
-### NPM Scripts ###
+config.theme.screens.xs
+// returns '320px'
+```
 
-| Command          | Description
-| ---------------- |------------
-| start            | Start the project (runs storybook and watch tasks in parallel).
-| build            | Build project in dist/ folder.
-| build-storybook  | Build static storybook assets.
-| release          | Release new version.
-| storybook        | Run storybook for development on port 6006.
-| watch            | Watch src files.
-| lint             | Lints all the styles with stylelint.
+## API
 
-All commands are executable by running `npm run [COMMAND-NAME]`.
+* Base
+* Components:
+	* `.c-button`
+	* `.c-checkbox`
+	* `.c-datepicker`
+	* `.c-icon`
+	* `.c-input`
+	* `.c-loader`
+	* `.c-modal`
+	* `.c-radio`
+	* `.c-select`
+	* `.c-switch`
+* Utils:
+	* `.u-container`
+
+### Tailwindcss
+
+Checkout our [`tailwind.config.js`](../../tailwind.config.js) for all the custom changes
+
+* Prefix: `.u-`
+* Theme changes:
+	* Screens: custom
+	* Colors: custom
+	* Border color: added `.u-border-default`
+	* Box shadow: custom
+	* Font family: custom
+	* Font size: custom
+	* Line height: custom
+	* Max width: custom
+	* Text color: added `.u-text-color`
+	* Z-index: custom
+* Disabled plugins:
+	* container
+
+For more info on all tailwindcss' utility classes, check out their docs.
+
+## Development
+
+Builds are setup with webpack, check the [`webpack.config.js`](./webpack.config.js) for more info.  
+We use [storybook](https://github.com/storybookjs/storybook) for developping our styles.
+
+### NPM scripts
+
+| Command         | Description                                                | Runs
+| --------------- | ---------------------------------------------------------- | -----------
+| start           | Start up storybook                                         | `start-storybook -p 6006 -s ../../storybook/static`
+| build           | Build package contents                                     | `webpack`
+| build:storybook | Build storybook styleguide                                 | `build-storybook`
+| lint            | Lint scss files                                             | `stylelint ./src/scss --cache --syntax scss`
+| prepublishOnly  | Runs before every `npm run publish` (!important for lerna) | `npm run lint && npm run build`

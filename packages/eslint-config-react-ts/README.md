@@ -15,7 +15,7 @@ Then, add this to your `.eslintrc.*` file:
 ```
 {
   parserOptions: {
-	  project: 'path/to/tsconfig.json',
+    project: 'path/to/tsconfig.json',
   },
   extends: [
     '@mobly/eslint-config-react-ts',
@@ -24,6 +24,8 @@ Then, add this to your `.eslintrc.*` file:
 ```
 
 Don't forget to specify the `parserOptions.project` property. This should point to your `tsconfig.json`.
+
+## Dependencies
 
 Used plugins:
 * [@typescript-eslint/eslint-plugin](https://github.com/typescript-eslint/typescript-eslint/tree/master/packages/eslint-plugin)
