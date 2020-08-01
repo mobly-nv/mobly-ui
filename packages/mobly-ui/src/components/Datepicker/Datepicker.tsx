@@ -5,8 +5,7 @@ import React, { useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import createAutoCorrectedDatePipe from 'text-mask-addons/dist/createAutoCorrectedDatePipe';
 
-import { Input } from '../Input';
-import inputStyles from '../Input/Input.module.scss';
+import { Input, inputStyles } from '../Input';
 
 import { DATE_FORMAT, MONTH_LABELS } from './Datepicker.const';
 import styles from './Datepicker.module.scss';
