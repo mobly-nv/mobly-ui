@@ -105,6 +105,6 @@
 	}
 
 	~ .c-radio__label {
-		color: theme('textColor.default');
+		@apply text-color;
 	}
 }

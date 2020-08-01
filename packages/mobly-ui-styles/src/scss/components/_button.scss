@@ -61,7 +61,7 @@
 }
 
 .c-button--transparent {
-	@apply bg-transparent border-transparent text-default;
+	@apply bg-transparent border-transparent text-color;
 
 	&:hover {
 		@apply text-yellow-200 bg-transparent border-transparent;

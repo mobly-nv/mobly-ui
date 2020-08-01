@@ -80,7 +80,7 @@ module.exports = {
 		}),
 		textColor: theme => ({
 			...theme('colors'),
-			default: theme('colors.gray.600'),
+			'color': theme('colors.gray.600'),
 		}),
 		zIndex: {
 			auto: 'auto',
