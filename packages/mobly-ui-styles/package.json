@@ -36,7 +36,6 @@
     "@babel/core": "^7.10.5",
     "@mobly/stylelint-config-scss": "^1.0.1",
     "@storybook/addon-actions": "^5.3.19",
-    "@storybook/addon-docs": "^5.3.19",
     "@storybook/html": "^5.3.19",
     "autoprefixer": "^9.8.5",
     "babel-loader": "^8.1.0",
