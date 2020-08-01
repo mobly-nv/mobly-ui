@@ -4,7 +4,7 @@
  */
 
 .c-button {
-	@extend %button-reset;
+	@include button-reset;
 
 	@apply
 		inline-block
@@ -43,7 +43,7 @@
 .c-button--link {
 	@apply p-0 font-medium text-base text-blue-200 normal-case bg-transparent border-0;
 
-	@extend %c-link;
+	@include c-link;
 
 	min-height: auto;
 
