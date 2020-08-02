@@ -1,6 +1,6 @@
 {
   "name": "@mobly/ui-react",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Mobly UI component library for react",
   "main": "build/bundle.js",
   "types": "build/types/index.d.ts",
