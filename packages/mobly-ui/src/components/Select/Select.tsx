@@ -2,10 +2,9 @@ import classnames from 'classnames/bind';
 import React, { useState } from 'react';
 import ReactSelect from 'react-select';
 
-import { Icon } from '../Icon';
 import { Input } from '../Input';
-import { Loader } from '../Loader';
 
+import { SELECT_COMPONENTS } from './Select.const';
 import styles from './Select.module.scss';
 import { SelectProps } from './Select.types';
 
@@ -58,18 +57,7 @@ const Select: React.FC<SelectProps> = ({
 				{...rest}
 				className={cx('c-react-select')}
 				classNamePrefix="c-react-select"
-				components={{
-					ClearIndicator: () => (
-						<Icon className="c-react-select__clear-indicator" name="cross" />
-					),
-					DropdownIndicator: () => (
-						<Icon className="c-react-select__dropdown-indicator" name="chevron-down" />
-					),
-					IndicatorSeparator: null,
-					LoadingIndicator: () => (
-						<Loader className="c-react-select__loading-indicator" />
-					),
-				}}
+				components={SELECT_COMPONENTS}
 				inputId={id || name}
 				name={name}
 				options={options}
