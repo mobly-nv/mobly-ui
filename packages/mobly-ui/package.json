@@ -1,6 +1,6 @@
 {
   "name": "@mobly/ui-react",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Mobly UI component library for react",
   "main": "build/bundle.js",
   "types": "build/types/index.d.ts",
@@ -50,7 +50,7 @@
   "dependencies": {
     "@mobly/react-mobile-picker": "^0.2.3",
     "@mobly/react-text-mask": "^5.5.0",
-    "@mobly/ui-styles": "^1.0.0",
+    "@mobly/ui-styles": "^1.0.1",
     "classnames": "^2.2.6",
     "date-fns": "^2.14.0",
     "react-device-detect": "^1.13.1",
@@ -62,8 +62,8 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "@babel/preset-typescript": "^7.10.4",
-    "@mobly/eslint-config-react-ts": "^1.0.1",
-    "@mobly/stylelint-config-scss": "^1.0.1",
+    "@mobly/eslint-config-react-ts": "^1.1.0",
+    "@mobly/stylelint-config-scss": "^1.1.0",
     "@storybook/addon-actions": "^5.3.19",
     "@storybook/addon-docs": "^5.3.19",
     "@storybook/react": "^5.3.19",
