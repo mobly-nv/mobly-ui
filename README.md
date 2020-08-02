@@ -35,7 +35,7 @@ npx lerna changed
 
 ### UI
 
-* [mobly-ui-react](./packages/mobly-ui-react)
+* [mobly-ui-react](./packages/mobly-ui)
 * [mobly-ui-styles](./packages/mobly-ui-styles)
 
 ### Configs
