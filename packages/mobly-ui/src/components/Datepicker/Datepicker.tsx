@@ -26,6 +26,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
 	maxDate = format(new Date(), DATE_FORMAT),
 	monthLabels = MONTH_LABELS,
 	name,
+	noLabelFloat,
 	onBlur,
 	onChange,
 	onFocus,
@@ -69,6 +70,7 @@ const Datepicker: React.FC<DatepickerProps> = ({
 			focused={isFocused}
 			label={label}
 			name={name}
+			noLabelFloat={noLabelFloat}
 			style={style}
 			value={value}
 		>
