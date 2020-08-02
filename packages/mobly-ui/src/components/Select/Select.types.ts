@@ -1,14 +1,12 @@
-import { FieldProps } from '../../types';
+import { Props } from 'react-select';
 
-export interface SelectProps extends FieldProps<HTMLSelectElement> {
-	async?: boolean;
-	native?: boolean;
-	options: SelectOption[];
-	value?: string;
+export interface SelectProps extends Props<SelectOption> {
+	name: string;
+	noLabelFloat?: boolean;
 }
 
 export interface SelectOption {
-	disabled?: boolean;
 	label: string;
-	value: string;
+	value: any;
+	isDisabled?: boolean;
 }

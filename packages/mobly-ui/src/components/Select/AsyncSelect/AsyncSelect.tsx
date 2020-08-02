@@ -1,17 +1,17 @@
 import classnames from 'classnames/bind';
 import React, { useState } from 'react';
-import ReactSelect from 'react-select';
+import AsyncReactSelect from 'react-select/async';
 
-import { Icon } from '../Icon';
-import { Input } from '../Input';
-import { Loader } from '../Loader';
+import { Icon } from '../../Icon';
+import { Input } from '../../Input';
+import { Loader } from '../../Loader';
+import styles from '../Select.module.scss';
 
-import styles from './Select.module.scss';
-import { SelectProps } from './Select.types';
+import { AsyncSelectProps } from './AsyncSelect.types';
 
 const cx = classnames.bind(styles);
 
-const Select: React.FC<SelectProps> = ({
+const AsyncSelect: React.FC<AsyncSelectProps> = ({
 	className,
 	errored = false,
 	id,
@@ -54,7 +54,7 @@ const Select: React.FC<SelectProps> = ({
 			style={style}
 			value={value ? JSON.stringify(value) : undefined}
 		>
-			<ReactSelect
+			<AsyncReactSelect
 				{...rest}
 				className={cx('c-react-select')}
 				classNamePrefix="c-react-select"
@@ -82,4 +82,4 @@ const Select: React.FC<SelectProps> = ({
 	);
 };
 
-export default Select;
+export default AsyncSelect;

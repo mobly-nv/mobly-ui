@@ -1,6 +1,8 @@
 import { Meta, Story, Preview } from '@storybook/addon-docs/blocks';
 import { useState } from 'react';
 
+import { AsyncSelect } from './AsyncSelect';
+import { NativeSelect } from './NativeSelect';
 import Select from './Select';
 
 <Meta title="Select" />
@@ -10,13 +12,63 @@ import Select from './Select';
 <Preview>
 	<Story name="Default">
 		{() => {
-			const [value, setValue] = useState('');
+			const [value, setValue] = useState(null);
 			return (
 				<Select
 					label="Select"
+					onChange={(option) => setValue(option)}
+					options={[
+						{ isDisabled: true, label: 'Select an option', value: '' },
+						{ label: 'Option 1', value: 'option-1' },
+						{ label: 'Option 2', value: 'option-2' },
+					]}
+					value={value}
+				/>
+			);
+		}}
+	</Story>
+</Preview>
+
+## Async
+
+<Preview>
+	<Story name="Async">
+		{() => {
+			const [value, setValue] = useState(null);
+			return (
+				<AsyncSelect
+					label="Select"
+					loadOptions={() => {
+						return new Promise((resolve) => {
+							setTimeout(() => {
+								resolve([
+									{ isDisabled: true, label: 'Select an option', value: '' },
+									{ label: 'Option 1', value: 'option-1' },
+									{ label: 'Option 2', value: 'option-2' },
+								]);
+							}, 1000)
+						});
+					}}
+					onChange={(option) => setValue(option)}
+					value={value}
+				/>
+			);
+		}}
+	</Story>
+</Preview>
+
+## Native
+
+<Preview>
+	<Story name="Native select">
+		{() => {
+			const [value, setValue] = useState('');
+			return (
+				<NativeSelect
+					label="Select"
 					onChange={(e) => setValue(e.target.value)}
 					options={[
-						{ disabled: true, label: 'Select an option', value: '' },
+						{ isDisabled: true, label: 'Select an option', value: '' },
 						{ label: 'Option 1', value: 'option-1' },
 						{ label: 'Option 2', value: 'option-2' },
 					]}
